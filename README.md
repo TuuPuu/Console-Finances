@@ -8,9 +8,9 @@ This project involves financial analysis over a period of time. The motivation b
 
 ## Installation
 
-To run this project access the console at the following:
+To run this project access the console at the following: https://tuupuu.github.io/Console-Finances/
 
-Repo:
+Repo: https://github.com/TuuPuu/Console-Finances
 
 ## Usage
 
