@@ -92,4 +92,14 @@ let totalMonths = finances.length;
 
 console.log(` 1) The total number of months included are ${totalMonths}`);
 
-// CHALLENGE 02 -
+// CHALLENGE 02 - Net total amount of profit/losses
+let sumofValue = 0;
+
+for (i = 0; i < finances.length; i++) {
+  let value = finances[i][1];
+  sumofValue = sumofValue + value;
+}
+
+console.log(` 2) The total net Profit/Losses is £${sumofValue}.00`);
+
+// CHALLENGE 03 -
