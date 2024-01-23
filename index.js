@@ -87,6 +87,8 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
+console.log("FINANCIAL ANALYSIS");
+
 // CHALLENGE 01 - Total number of months included
 let totalMonths = finances.length;
 
@@ -95,11 +97,28 @@ console.log(` 1) The total number of months included are ${totalMonths}`);
 // CHALLENGE 02 - Net total amount of profit/losses
 let sumofValue = 0;
 
-for (i = 0; i < finances.length; i++) {
+for (i = 0; i < totalMonths; i++) {
   let value = finances[i][1];
-  sumofValue = sumofValue + value;
+  sumofValue += value;
 }
 
 console.log(` 2) The total net Profit/Losses is £${sumofValue}.00`);
 
-// CHALLENGE 03 -
+// CHALLENGE 03 - Average changes in Profit/losses
+let changeInProfit = 0;
+
+for (i = 0; i < totalMonths - 1; i++) {
+  let firstValue = finances[i][1];
+  let secondValue = finances[i + 1][1];
+
+  changeInProfit += firstValue - secondValue;
+}
+
+// console.log(changeInProfit);
+
+let monthsForAverage = totalMonths - 1;
+let calculatedAverage = (changeInProfit / monthsForAverage).toFixed(2);
+
+console.log(
+  ` 3) The average change in profits/losses is £${calculatedAverage}`
+);
