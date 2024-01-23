@@ -87,12 +87,12 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-console.log("FINANCIAL ANALYSIS");
+console.log("____FINANCIAL ANALYSIS_____");
 
 // CHALLENGE 01 - Total number of months included
 let totalMonths = finances.length;
 
-console.log(` 1) The total number of months included are ${totalMonths}`);
+console.log(`1) The total number of months included are ${totalMonths}`);
 
 // CHALLENGE 02 - Net total amount of profit/losses
 let sumofValue = 0;
@@ -102,7 +102,7 @@ for (i = 0; i < totalMonths; i++) {
   sumofValue += value;
 }
 
-console.log(` 2) The total net Profit/Losses is £${sumofValue}.00`);
+console.log(`2) The total net Profit/Losses is £${sumofValue}.00`);
 
 // CHALLENGE 03 - Average changes in Profit/losses
 let changeInProfit = 0;
@@ -119,6 +119,39 @@ for (i = 0; i < totalMonths - 1; i++) {
 let monthsForAverage = totalMonths - 1;
 let calculatedAverage = (changeInProfit / monthsForAverage).toFixed(2);
 
+console.log(`3) The average change in Profits/Losses is £${calculatedAverage}`);
+
+// CHALLENGE 04 - Monthe with greatest profit increase
+let greatestChangeInProfit = 0;
+let profitMonth = "";
+
+if (changeInProfit > greatestChangeInProfit) {
+  greatestChangeInProfit = changeInProfit;
+
+  profitMonth = finances[i][0];
+}
+
 console.log(
-  ` 3) The average change in profits/losses is £${calculatedAverage}`
+  `4) The period with the greatest profit increase is ${profitMonth}, with a value of £${greatestChangeInProfit}.00`
+);
+
+// CHALLENGE 05 - Month with greatest profit decrease
+let differenceInProfit = 0;
+let greatestDecreaseInProfit = 0;
+let decreaseProfitMonth = "";
+
+for (let i = 1; i < finances.length; i++) {
+  let currentProfit = finances[i][1];
+  let previousProfit = finances[i - 1][1];
+  differenceInProfit = previousProfit - currentProfit;
+}
+
+if (differenceInProfit < greatestDecreaseInProfit) {
+  greatestDecreaseInProfit = differenceInProfit;
+
+  decreaseProfitMonth = finances[i][0];
+}
+
+console.log(
+  `5) The period with the greatest profit decrease is ${decreaseProfitMonth}, with a value of £${greatestDecreaseInProfit}.00`
 );
